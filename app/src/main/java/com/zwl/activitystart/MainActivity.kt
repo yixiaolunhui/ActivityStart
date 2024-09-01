@@ -1,9 +1,11 @@
 package com.zwl.activitystart
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
 import com.zwl.activitystart.databinding.ActivityMainBinding
+import com.zwl.activitystart.page.NextActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -22,6 +24,10 @@ class MainActivity : AppCompatActivity() {
             JumpHelper.jumpNextPageLoginForResult(this)
         }
 
+
+        startActivity(Intent(this,NextActivity::class.java).apply {
+            putExtra("params","测试参数数据")
+        })
 
     }
 }
